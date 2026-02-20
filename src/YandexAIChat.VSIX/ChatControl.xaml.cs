@@ -164,6 +164,9 @@ namespace YandexAIChat
                 "explanation" => "explanation",
                 "visualization" => "visualization",
                 "security analysis" => "security",
+                "planning" => "planning",
+                "bug fix" => "bugfix",
+                "suggest tools" => "suggest",
                 _ => "code"
             };
         }
@@ -182,7 +185,17 @@ namespace YandexAIChat
 
             if (!string.IsNullOrWhiteSpace(result.Analysis))
             {
-                AppendAIMessage($"Security Analysis:\n{result.Analysis}", isCode: false);
+                AppendAIMessage($"Analysis:\n{result.Analysis}", isCode: false);
+            }
+
+            if (!string.IsNullOrWhiteSpace(result.Plan))
+            {
+                AppendAIMessage($"Development Plan:\n{result.Plan}", isCode: false);
+            }
+
+            if (!string.IsNullOrWhiteSpace(result.Suggestions))
+            {
+                AppendAIMessage($"Tool & Method Suggestions:\n{result.Suggestions}", isCode: false);
             }
         }
 

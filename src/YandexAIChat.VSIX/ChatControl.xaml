@@ -35,6 +35,9 @@
         <ComboBoxItem Content="Explanation" />
         <ComboBoxItem Content="Visualization" />
         <ComboBoxItem Content="Security Analysis" />
+        <ComboBoxItem Content="Planning" />
+        <ComboBoxItem Content="Bug Fix" />
+        <ComboBoxItem Content="Suggest Tools" />
       </ComboBox>
       <Button Content="History"
               Width="70"

@@ -101,6 +101,18 @@ namespace YandexAIChat
             "documentation" =>
                 "You are a technical writer. Add clear, helpful comments and documentation to the code. " +
                 "Use the language's standard documentation style (XML docs for C#, JSDoc for JS, etc.).",
+            "planning" =>
+                "You are a software architect and project planner. Create a structured development plan " +
+                "for the described feature or project. Include: goal summary, breakdown of tasks with priorities, " +
+                "suggested architecture and file structure, and milestones. Use numbered lists and clear headings.",
+            "bugfix" =>
+                "You are an expert debugger. Analyze the provided code or error description, identify all bugs, " +
+                "warnings, and potential issues. For each issue state: location, root cause, severity, and the " +
+                "corrected code snippet. Also explain how to prevent similar issues in the future.",
+            "suggest" =>
+                "You are a senior software architect. Given the problem description, recommend the best tools, " +
+                "libraries, design patterns, and implementation methods. Explain why each is appropriate, " +
+                "provide short usage examples, and generate a reusable helper method or utility tailored to the task.",
             _ =>
                 "You are a helpful AI assistant specialized in software development."
         };

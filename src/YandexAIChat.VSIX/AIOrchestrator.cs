@@ -48,6 +48,18 @@ namespace YandexAIChat
                     result.Analysis = await _aiManager.SendPrompt(prompt, "security");
                     break;
 
+                case "planning":
+                    result.Plan = await _aiManager.SendPrompt(prompt, "planning");
+                    break;
+
+                case "bugfix":
+                    result.Analysis = await _aiManager.SendPrompt(prompt, "bugfix");
+                    break;
+
+                case "suggest":
+                    result.Suggestions = await _aiManager.SendPrompt(prompt, "suggest");
+                    break;
+
                 case "visualization":
                     result.Image = await _artManager.GenerateUMLDiagram(prompt);
                     break;

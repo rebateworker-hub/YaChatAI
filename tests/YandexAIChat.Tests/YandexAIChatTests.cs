@@ -120,6 +120,8 @@ namespace YandexAIChat.Tests
             Assert.Null(result.Code);
             Assert.Null(result.Image);
             Assert.Null(result.Analysis);
+            Assert.Null(result.Plan);
+            Assert.Null(result.Suggestions);
         }
 
         [Fact]
@@ -130,12 +132,42 @@ namespace YandexAIChat.Tests
             {
                 Code = "Console.WriteLine(\"Hello\");",
                 Image = imageBytes,
-                Analysis = "No vulnerabilities found."
+                Analysis = "No vulnerabilities found.",
+                Plan = "1. Define requirements\n2. Implement feature\n3. Write tests",
+                Suggestions = "Use AutoMapper for object mapping."
             };
 
             Assert.Equal("Console.WriteLine(\"Hello\");", result.Code);
             Assert.Equal(imageBytes, result.Image);
             Assert.Equal("No vulnerabilities found.", result.Analysis);
+            Assert.Equal("1. Define requirements\n2. Implement feature\n3. Write tests", result.Plan);
+            Assert.Equal("Use AutoMapper for object mapping.", result.Suggestions);
+        }
+
+        [Fact]
+        public void Plan_CanBeSetIndependently()
+        {
+            var result = new OrchestrationResult
+            {
+                Plan = "Step 1: Design API"
+            };
+
+            Assert.Equal("Step 1: Design API", result.Plan);
+            Assert.Null(result.Code);
+            Assert.Null(result.Suggestions);
+        }
+
+        [Fact]
+        public void Suggestions_CanBeSetIndependently()
+        {
+            var result = new OrchestrationResult
+            {
+                Suggestions = "Use Polly for retry policies."
+            };
+
+            Assert.Equal("Use Polly for retry policies.", result.Suggestions);
+            Assert.Null(result.Code);
+            Assert.Null(result.Plan);
         }
     }
 }
