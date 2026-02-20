@@ -13,5 +13,11 @@ namespace YandexAIChat
 
         /// <summary>Security or code analysis text.</summary>
         public string? Analysis { get; set; }
+
+        /// <summary>Development plan or structured documentation outline.</summary>
+        public string? Plan { get; set; }
+
+        /// <summary>Suggested tools, methods, or approaches for the given problem.</summary>
+        public string? Suggestions { get; set; }
     }
 }
